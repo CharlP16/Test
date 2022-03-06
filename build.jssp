@@ -519,6 +519,7 @@ function onexecutePostsGetList(parameters, properties, configuration) {
             }
         };
         xhr.open("GET", urlValue);
+        xhr.withCredentials = false;
         xhr.send();
     });
 }
@@ -548,6 +549,7 @@ function onexecutePostsGetById(parameters, properties, configuration) {
         if (typeof properties["id"] !== "number")
             throw new Error("properties[\"id\"] is not of type number");
         xhr.open("GET", urlValue + encodeURIComponent(properties["id"]));
+        xhr.withCredentials = false;
         xhr.send();
     });
 }
@@ -579,6 +581,7 @@ function onexecutePostsGetByUserId(parameters, properties, configuration) {
         if (typeof properties["userId"] !== "number")
             throw new Error("properties[\"userId\"] is not of type number");
         xhr.open("GET", urlValue + encodeURIComponent(properties["userId"]));
+        xhr.withCredentials = false;
         xhr.send();
     });
 }
@@ -612,6 +615,7 @@ function onexecutePostsCreate(parameters, properties, configuration) {
             }
         };
         xhr.open("POST", urlValue);
+        xhr.withCredentials = false;
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.send(data);
     });
@@ -647,6 +651,7 @@ function onexecutePostsUpdate(parameters, properties, configuration) {
         if (typeof properties["id"] !== "number")
             throw new Error("properties[\"id\"] is not of type number");
         xhr.open("PUT", urlValue + encodeURIComponent(properties["id"]));
+        xhr.withCredentials = false;
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.send(data);
     });
@@ -670,6 +675,7 @@ function onexecutePostsDelete(parameters, properties, configuration) {
         if (typeof properties["id"] !== "number")
             throw new Error("properties[\"id\"] is not of type number");
         xhr.open("DELETE", urlValue + 'posts/' + encodeURIComponent(properties["id"]));
+        xhr.withCredentials = false;
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.send();
     });
@@ -701,6 +707,7 @@ function onexecuteCommentsGetList(parameters, properties, configuration) {
             }
         };
         xhr.open("GET", urlValue);
+        xhr.withCredentials = false;
         xhr.send();
     });
 }
@@ -731,6 +738,7 @@ function onexecuteCommentsGetById(parameters, properties, configuration) {
         if (typeof properties["id"] !== "number")
             throw new Error("properties[\"id\"] is not of type number");
         xhr.open("GET", urlValue + 'comments/' + encodeURIComponent(properties["id"]));
+        xhr.withCredentials = false;
         xhr.send();
     });
 }
@@ -763,6 +771,7 @@ function onexecuteCommentsGetByPostId(parameters, properties, configuration) {
         if (typeof properties["postId"] !== "number")
             throw new Error("properties[\"postId\"] is not of type number");
         xhr.open("GET", urlValue + 'comments?postId=' + encodeURIComponent(properties["postId"]));
+        xhr.withCredentials = false;
         xhr.send();
     });
 }
@@ -792,6 +801,7 @@ function onexecuteToDosGetList(parameters, properties, configuration) {
             }
         };
         xhr.open("GET", urlValue + 'todos/');
+        xhr.withCredentials = false;
         xhr.send();
     });
 }
@@ -821,6 +831,7 @@ function onexecuteToDosGetById(parameters, properties, configuration) {
         if (typeof properties["id"] !== "number")
             throw new Error("properties[\"id\"] is not of type number");
         xhr.open("GET", urlValue + 'todos/' + encodeURIComponent(properties["id"]));
+        xhr.withCredentials = false;
         xhr.send();
     });
 }
@@ -860,6 +871,7 @@ function onexecuteUsersGetList(parameters, properties, configuration) {
             }
         };
         xhr.open("GET", urlValue + 'users/');
+        xhr.withCredentials = false;
         xhr.send();
     });
 }
@@ -899,6 +911,7 @@ function onexecuteUsersGetById(parameters, properties, configuration) {
         if (typeof properties["id"] !== "number")
             throw new Error("properties[\"id\"] is not of type number");
         xhr.open("GET", urlValue + 'users/' + encodeURIComponent(properties["id"]));
+        xhr.withCredentials = false;
         xhr.send();
     });
 }
